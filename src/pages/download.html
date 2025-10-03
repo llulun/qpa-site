@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><!-- EDIT HERE -->下载 | QZone Praise Automator</title>
-<link rel="stylesheet" href="/src/assets/design.css" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>下载 | QZone Praise Automator</title>
+  <link rel="stylesheet" href="/src/assets/design.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
 <header class="header">
@@ -12,20 +13,22 @@
     <nav class="links">
       <a href="/">首页</a>
       <a href="/src/pages/product.html">产品</a>
-      <a href="/src/pages/download.html" class="active">下载</a> <!-- ADD active -->
+      <a href="/src/pages/download.html" class="active">下载</a>
       <a href="/src/pages/docs.html">文档</a>
       <a href="/src/pages/whitepaper.html">技术白皮书</a>
       <a href="/src/pages/changelog.html">日志</a>
       <a href="/src/pages/community.html">社区</a>
       <a href="/src/pages/showcase.html">案例</a>
       <a href="/src/pages/blog.html">技术博客</a>
+      <a href="/src/pages/about.html">关于</a>
+      <a href="/src/pages/contact.html">联系</a>
     </nav>
     <a class="cta" href="/src/pages/docs.html">快速开始</a>
   </div>
 </header>
 
 <main class="container section">
-  <h2><!-- EDIT HERE -->下载稳定版 v2.7.2</h2>
+  <h2><i class="fas fa-download"></i> 下载稳定版 v2.7.2</h2>
   <div class="card">
     <p><strong>获取方式：</strong>仓库页面点击 Raw -> 另存为，或下载 Release/ZIP。</p>
     <p><strong>兼容环境：</strong>Chrome / Firefox；扩展：Tampermonkey v4+ 或 Violentmonkey。</p>
@@ -37,7 +40,7 @@
     </div>
   </div>
 
-  <h2 style="margin-top:24px;">历史版本</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-history"></i> 历史版本</h2>
   <div class="card">
     <ul>
       <li><strong>v2.7.2：</strong>新增系统日志模块，优化稳定性与错误处理。</li>
@@ -45,6 +48,52 @@
       <li><strong>v2.5：</strong>滚动模拟策略调整、性能优化。</li>
     </ul>
   </div>
+
+  <h2 style="margin-top:24px;"><i class="fas fa-check-circle"></i> 兼容性列表</h2>
+  <div class="card">
+    <table style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr>
+          <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">浏览器</th>
+          <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">最低版本</th>
+          <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">备注</th>
+        </tr><td style="padding:8px">Chrome</td>
+        <td style="padding:8px">90+</td>
+        <td style="padding:8px">推荐最新版</td>
+      </tr>
+      <tr>
+        <td style="padding:8px">Firefox</td>
+        <td style="padding:8px">88+</td>
+        <td style="padding:8px">推荐最新版</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 style="margin-top:24px;"><i class="fas fa-table"></i> 详细变更日志（节选）</h2>
+<div class="card">
+  <table style="width:100%;border-collapse:collapse">
+    <thead>
+      <tr>
+        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">版本</th>
+        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">日期</th>
+        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">更新</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:8px">v2.7.2</td>
+        <td style="padding:8px">2025-09-23</td>
+        <td style="padding:8px">日志模块、稳定性优化</td>
+      </tr>
+      <tr>
+        <td style="padding:8px">v2.6</td>
+        <td style="padding:8px">2025-07-10</td>
+        <td style="padding:8px">状态栏美化、去重优化</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </main>
 
 <footer class="footer">

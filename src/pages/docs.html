@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><!-- EDIT HERE -->文档 | QZone Praise Automator</title>
-<link rel="stylesheet" href="/src/assets/design.css" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>文档 | QZone Praise Automator</title>
+  <link rel="stylesheet" href="/src/assets/design.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
 <header class="header">
@@ -13,19 +14,21 @@
       <a href="/">首页</a>
       <a href="/src/pages/product.html">产品</a>
       <a href="/src/pages/download.html">下载</a>
-      <a href="/src/pages/docs.html" class="active">文档</a> <!-- ADD active -->
+      <a href="/src/pages/docs.html" class="active">文档</a>
       <a href="/src/pages/whitepaper.html">技术白皮书</a>
       <a href="/src/pages/changelog.html">日志</a>
       <a href="/src/pages/community.html">社区</a>
       <a href="/src/pages/showcase.html">案例</a>
       <a href="/src/pages/blog.html">技术博客</a>
+      <a href="/src/pages/about.html">关于</a>
+      <a href="/src/pages/contact.html">联系</a>
     </nav>
     <a class="cta" href="/src/pages/download.html">获取</a>
   </div>
 </header>
 
 <main class="container section">
-  <h2>安装指南</h2>
+  <h2><i class="fas fa-book-open"></i> 安装指南</h2>
   <ol>
     <li><strong>安装扩展：</strong>Tampermonkey（推荐）或 Violentmonkey。</li>
     <li><strong>获取脚本：</strong>从官方仓库/Release 下载 QPA.js。</li>
@@ -33,7 +36,7 @@
     <li><strong>域名匹配：</strong>*://*.qzone.qq.com/*。</li>
   </ol>
 
-  <h2 style="margin-top:24px;">使用指南</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-play-circle"></i> 使用指南</h2>
   <ul>
     <li><strong>AL Menu：</strong>页面右上角浮动菜单，进入控制面板。</li>
     <li><strong>状态栏：</strong>查看任务进度、剩余时间与提示信息。</li>
@@ -41,9 +44,7 @@
     <li><strong>操作：</strong>暂停/恢复与测试执行。</li>
   </ul>
 
-  <h2 style="margin-top:24px;">配置参数字典</h2>
-  <p>包含字段、类型、默认值、推荐值与风险提示，便于调优与排障。</p>
-
+  <h2 style="margin-top:24px;"><i class="fas fa-sliders-h"></i> 配置参数字典</h2>
   <table style="width:100%;border-collapse:collapse">
     <thead>
       <tr>
@@ -51,37 +52,66 @@
         <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">类型</th>
         <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">默认值</th>
         <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">推荐值</th>
-        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">风险提示</th>
+        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">说明</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td style="padding:8px">refreshInterval</td><td style="padding:8px">Number (秒)</td><td style="padding:8px">180</td><td style="padding:8px">180–300</td><td style="padding:8px">过低可能触发异常识别与页面抖动。</td></tr>
-      <tr><td style="padding:8px">likeDelay</td><td style="padding:8px">Number (秒)</td><td style="padding:8px">5</td><td style="padding:8px">3–7</td><td style="padding:8px">过低会显得模式化，提升被检测风险。</td></tr>
-      <tr><td style="padding:8px">scrollStep</td><td style="padding:8px">Number (像素)</td><td style="padding:8px">480</td><td style="padding:8px">360–600</td><td style="padding:8px">过大可能跳过动态，过小会影响性能。</td></tr>
-      <tr><td style="padding:8px">scrollInterval</td><td style="padding:8px">Number (毫秒)</td><td style="padding:8px">900</td><td style="padding:8px">800–1200</td><td style="padding:8px">过低导致频繁查询与性能下降。</td></tr>
-      <tr><td style="padding:8px">retryCount</td><td style="padding:8px">Number</td><td style="padding:8px">2</td><td style="padding:8px">2–3</td><td style="padding:8px">过多重试会增加模式化与负载。</td></tr>
-      <tr><td style="padding:8px">maxLikesPerCycle</td><td style="padding:8px">Number</td><td style="padding:8px">50</td><td style="padding:8px">30–60</td><td style="padding:8px">上限过高可能触发风控。</td></tr>
-      <tr><td style="padding:8px">randomizeDelay</td><td style="padding:8px">Boolean</td><td style="padding:8px">true</td><td style="padding:8px">true</td><td style="padding:8px">关闭后更模式化，建议开启。</td></tr>
-      <tr><td style="padding:8px">userBlockList</td><td style="padding:8px">Array&lt;String&gt;</td><td style="padding:8px">[]</td><td style="padding:8px">视情况添加</td><td style="padding:8px">阻止特定用户的点赞，避免误触。</td></tr>
-      <tr><td style="padding:8px">filterKeywords</td><td style="padding:8px">Array&lt;String&gt;</td><td style="padding:8px">["广告","游戏"]</td><td style="padding:8px">按需增删</td><td style="padding:8px">过广会错过正常动态。</td></tr>
-      <tr><td style="padding:8px">enableEmojiStatus</td><td style="padding:8px">Boolean</td><td style="padding:8px">true</td><td style="padding:8px">true</td><td style="padding:8px">关闭仅影响可读性。</td></tr>
-      <tr><td style="padding:8px">theme</td><td style="padding:8px">String</td><td style="padding:8px">"light"</td><td style="padding:8px">"light"</td><td style="padding:8px">与系统主题不一致时可手动调整。</td></tr>
-      <tr><td style="padding:8px">panelOpacity</td><td style="padding:8px">Number (0–1)</td><td style="padding:8px">0.9</td><td style="padding:8px">0.8–1.0</td><td style="padding:8px">过低会影响可读性。</td></tr>
-      <tr><td style="padding:8px">statusBarHeight</td><td style="padding:8px">Number (px)</td><td style="padding:8px">40</td><td style="padding:8px">36–48</td><td style="padding:8px">过高遮挡内容，过低信息拥挤。</td></tr>
-      <tr><td style="padding:8px">logLevel</td><td style="padding:8px">"INFO"|"WARN"|"ERROR"</td><td style="padding:8px">"INFO"</td><td style="padding:8px">"INFO"</td><td style="padding:8px">过低粒度影响排障，过高噪声增大。</td></tr>
-      <tr><td style="padding:8px">logMaxEntries</td><td style="padding:8px">Number</td><td style="padding:8px">500</td><td style="padding:8px">300–800</td><td style="padding:8px">过大影响内存与渲染。</td></tr>
-      <tr><td style="padding:8px">likeSelector</td><td style="padding:8px">String (CSS)</td><td style="padding:8px">".qz-like-btn"</td><td style="padding:8px">稳定选择器</td><td style="padding:8px">错误选择器导致误操作或失败。</td></tr>
+      <tr><td style="padding:8px">refreshInterval</td><td style="padding:8px">Number</td><td style="padding:8px">180</td><td style="padding:8px">180–300</td><td style="padding:8px">刷新频率（秒）</td></tr>
+      <tr><td style="padding:8px">likeDelay</td><td style="padding:8px">Number</td><td style="padding:8px">5</td><td style="padding:8px">3–7</td><td style="padding:8px">点赞延迟（秒）</td></tr>
+      <tr><td style="padding:8px">scrollStep</td><td style="padding:8px">Number</td><td style="padding:8px">480</td><td style="padding:8px">360–600</td><td style="padding:8px">滚动步长（像素）</td></tr>
     </tbody>
   </table>
+
+  <h2 style="margin-top:24px;"><i class="fas fa-code"></i> 示例代码</h2>
+  <div class="card">
+    <pre style="white-space:pre-wrap;word-wrap:break-word;"><code>// 调整延时与滚动策略
+config.likeDelay = 5;
+config.scrollStep = 480;
+config.randomizeDelay = true;
+
+// 启用日志
+logger.setLevel('INFO');
+logger.maxEntries = 500;
+
+// 暂停与恢复
+scheduler.pause();
+setTimeout(() => scheduler.resume(), 30000);
+</code></pre>
+  </div>
+
+  <h2 style="margin-top:24px;"><i class="fas fa-question-circle"></i> 交互式 FAQ</h2>
+  <div class="card" id="faq-accordion" role="region" aria-label="交互 FAQ">
+    <button class="button secondary" data-faq="q1" aria-expanded="false"><i class="fas fa-chevron-down"></i> 如何与 Auto Login Helper 搭配？</button>
+    <div hidden id="q1"><p>先登录后自动启动 QPA，提高一键化体验。</p></div>
+
+    <button class="button secondary" data-faq="q2" aria-expanded="false"><i class="fas fa-chevron-down"></i> 弱网环境如何优化？</button>
+    <div hidden id="q2"><p>提高 likeDelay 与 scrollInterval，减少失败与重试。</p></div>
+  </div>
 </main>
 
 <footer class="footer">
   <div class="container cols">
-    <div><h4>下载</h4><p><a href="/src/pages/download.html">获取稳定版</a></p></div>
-    <div><h4>日志</h4><p><a href="/src/pages/changelog.html">查看版本历史</a></p></div>
-    <div><h4>社区</h4><p><a href="/src/pages/community.html">贡献与反馈</a></p></div>
-    <div><h4>开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
+    <div><h4
+      <footer class="footer">
+  <div class="container cols">
+    <div>
+      <h4><i class="fas fa-download"></i> 下载</h4>
+      <p><a href="/src/pages/download.html">获取稳定版</a></p>
+    </div>
+    <div>
+      <h4><i class="fas fa-history"></i> 日志</h4>
+      <p><a href="/src/pages/changelog.html">查看版本历史</a></p>
+    </div>
+    <div>
+      <h4><i class="fas fa-users"></i> 社区</h4>
+      <p><a href="/src/pages/community.html">贡献与反馈</a></p>
+    </div>
+    <div>
+      <h4><i class="fas fa-code-branch"></i> 开源</h4>
+      <p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p>
+    </div>
   </div>
 </footer>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>

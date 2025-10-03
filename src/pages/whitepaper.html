@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><!-- EDIT HERE -->技术白皮书 | QZone Praise Automator</title>
-<link rel="stylesheet" href="/src/assets/design.css" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>技术白皮书 | QZone Praise Automator</title>
+  <link rel="stylesheet" href="/src/assets/design.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
 <header class="header">
@@ -14,70 +15,65 @@
       <a href="/src/pages/product.html">产品</a>
       <a href="/src/pages/download.html">下载</a>
       <a href="/src/pages/docs.html">文档</a>
-      <a href="/src/pages/whitepaper.html" class="active">技术白皮书</a> <!-- ADD active -->
+      <a href="/src/pages/whitepaper.html" class="active">技术白皮书</a>
       <a href="/src/pages/changelog.html">日志</a>
       <a href="/src/pages/community.html">社区</a>
       <a href="/src/pages/showcase.html">案例</a>
       <a href="/src/pages/blog.html">技术博客</a>
+      <a href="/src/pages/about.html">关于</a>
+      <a href="/src/pages/contact.html">联系</a>
     </nav>
     <a class="cta" href="/src/pages/download.html">获取</a>
   </div>
 </header>
 
 <main class="container section">
-  <h2>概述</h2>
+  <h2><i class="fas fa-file-alt"></i> 技术白皮书概述</h2>
   <p>白皮书阐述 QPA 的架构设计、DOM 交互策略、调度与节流机制、反检测策略、日志与可视化体系、性能优化、测试方法与路线图。</p>
 
-  <h2 style="margin-top:24px;">架构设计</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-project-diagram"></i> 架构设计</h2>
   <div class="card">
     <p><strong>模块：</strong>Detection · Action · Scheduler · UI · Logger · Config · Guard。</p>
     <p><strong>数据流：</strong>检测列表 → 调度节奏 → 执行动作 → UI 展示 → Logger 记录 → Config 控制。</p>
     <p><strong>可插拔：</strong>模块解耦，参数化配置支持策略替换。</p>
   </div>
 
-  <h2 style="margin-top:24px;">DOM 与事件模拟</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-code"></i> DOM 与事件模拟</h2>
   <div class="card">
     <p><strong>选择器稳定性：</strong>优先稳定节点；避免过度依赖 class 名称。</p>
     <p><strong>点击事件：</strong>使用原生事件序列（Mouse/Pointer）。</p>
     <p><strong>状态读取：</strong>基于按钮文本/属性判断是否已点赞。</p>
   </div>
 
-  <h2 style="margin-top:24px;">调度、节流与随机化</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-stream"></i> 调度与节流</h2>
   <div class="card">
     <p><strong>时间轮：</strong>以 refreshInterval 轮询，限制 maxLikesPerCycle。</p>
     <p><strong>节流：</strong>likeDelay / scrollInterval 控制最小间隔。</p>
     <p><strong>随机化：</strong>延时与步长加入微扰（±10–20%）。</p>
   </div>
 
-  <h2 style="margin-top:24px;">反检测与风险控制</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-user-shield"></i> 风控策略</h2>
   <div class="card">
     <p><strong>速率控制：</strong>避免短时大量点赞；分批完成。</p>
     <p><strong>行为多样性：</strong>滚动、暂停、延时与重试穿插。</p>
     <p><strong>过滤与阻止：</strong>filterKeywords 与 userBlockList 降低异常源。</p>
   </div>
 
-  <h2 style="margin-top:24px;">日志与可视化</h2>
-  <div class="card">
-    <p><strong>等级：</strong>INFO/WARN/ERROR；区分重要度。</p>
-    <p><strong>内容：</strong>时间戳、事件名、参数摘要、结果状态。</p>
-    <p><strong>持久化：</strong>面板列表上限 logMaxEntries；支持清理与导出。</p>
-  </div>
-
-  <h2 style="margin-top:24px;">性能优化</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-chart-line"></i> 性能优化</h2>
   <div class="card">
     <p><strong>批处理：</strong>滚动后统一查询与处理。</p>
     <p><strong>缓存：</strong>已处理节点标识缓存。</p>
     <p><strong>可见性优先：</strong>优先处理可视区域。</p>
   </div>
 
-  <h2 style="margin-top:24px;">测试与质量保证</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-vial"></i> 测试与质量保证</h2>
   <div class="card">
     <p><strong>跨浏览器：</strong>Chrome/Firefox 安装、运行与日志验证。</p>
     <p><strong>场景用例：</strong>弱网、长列表、过滤极端值、延时/步长边界。</p>
     <p><strong>回归检查：</strong>发布前复测检测→调度→点赞→日志主流程。</p>
   </div>
 
-  <h2 style="margin-top:24px;">路线图</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-road"></i> 路线图</h2>
   <div class="card">
     <ul>
       <li><strong>v2.8：</strong>更细粒度过滤规则与预设。</li>
