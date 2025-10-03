@@ -12,10 +12,7 @@
 <header class="header">
   <div class="container nav">
     <div class="brand">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <rect x="2" y="2" width="20" height="20" rx="6" fill="#4285f4"/>
-        <path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#4285f4"/><path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
       <span>QZone Praise Automator</span>
     </div>
     <nav class="links">
@@ -36,119 +33,40 @@
 </header>
 
 <main class="container section">
-  <!-- 页面标题与简介（区别于首页，无大背景 Hero） -->
-  <header style="margin-bottom:16px">
-    <h1><i class="fas fa-newspaper"></i> 技术博客</h1>
-    <p style="color:var(--muted)">深入分享自动化原理、策略与优化实践，记录版本演进与设计思考。</p>
-  </header>
+  <h2><i class="fas fa-newspaper"></i> 最新文章</h2>
+  <div class="card-grid">
+    <article class="card">
+      <h3>状态栏 UX 细节</h3>
+      <p>颜色、进度、对比度与 ARIA 标签，提升可读与无障碍。</p>
+      <img src="https://github.com/llulun/qzone-praise-automator/raw/main/docs/control-panel.png" alt="封面" loading="lazy" style="width:100%;border-radius:12px;border:1px solid var(--border)">
+    </article>
+    <article class="card">
+      <h3>日志模块最佳实践</h3>
+      <p>INFO/WARN/ERROR 分级、时间戳与面板查看策略。</p>
+      <img src="https://github.com/llulun/qzone-praise-automator/raw/main/docs/control-panel.png" alt="封面" loading="lazy" style="width:100%;border-radius:12px;border:1px solid var(--border)">
+    </article>
+    <article class="card">
+      <h3>自动点赞原理</h3>
+      <p>选择器稳定性与事件模拟详解，点击序列与状态判断策略。</p>
+      <img src="https://github.com/llulun/qzone-praise-automator/raw/main/docs/control-panel.png" alt="封面" loading="lazy" style="width:100%;border-radius:12px;border:1px solid var(--border)">
+    </article>
+  </div>
 
-  <!-- 布局：左侧文章列表 + 右侧侧栏 -->
-  <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px">
-    <!-- 文章列表 -->
-    <section aria-label="文章列表">
-      <article class="card">
-        <h2 style="margin:0">状态栏 UX 细节：从信息到感受</h2>
-        <p style="margin:.5rem 0;color:var(--muted)">
-          <span><i class="far fa-calendar"></i> 2025-09-20</span> ·
-          <span><i class="far fa-clock"></i> 6 分钟读完</span> ·
-          <span><i class="fas fa-tags"></i> UX, 无障碍, 色彩</span>
-        </p>
-        <img src="https://github.com/llulun/qzone-praise-automator/raw/main/docs/control-panel.png"
-             alt="状态栏预览"
-             loading="lazy"
-             style="width:100%;border-radius:12px;border:1px solid var(--border);margin:.5rem 0">
-        <p>我们将状态栏从“信息聚合”升级为“情境提示”：颜色与对比度遵循 WCAG，进度条与图标传达当前状态，ARIA 标签保障读屏友好。本文拆解设计权衡与落地细节。</p>
-        <p><a class="button" href="#">阅读全文</a></p>
-      </article>
-
-      <article class="card" style="margin-top:16px">
-        <h2 style="margin:0">日志模块最佳实践：看见、定位、解决</h2>
-        <p style="margin:.5rem 0;color:var(--muted)">
-          <span><i class="far fa-calendar"></i> 2025-09-12</span> ·
-          <span><i class="far fa-clock"></i> 5 分钟读完</span> ·
-          <span><i class="fas fa-tags"></i> Logger, 调试, 质量</span>
-        </p>
-        <img src="https://github.com/llulun/qzone-praise-automator/raw/main/docs/control-panel.png"
-             alt="日志模块预览"
-             loading="lazy"
-             style="width:100%;border-radius:12px;border:1px solid var(--border);margin:.5rem 0">
-        <p>INFO/WARN/ERROR 分级让问题“有层次”，时间戳与上下文让问题“可复盘”。我们分享面板查看与清理策略，以及如何将日志与策略回归测试串联。</p>
-        <p><a class="button" href="#">阅读全文</a></p>
-      </article>
-
-      <article class="card" style="margin-top:16px">
-        <h2 style="margin:0">自动点赞原理：选择器稳定性与事件序列</h2>
-        <p style="margin:.5rem 0;color:var(--muted)">
-          <span><i class="far fa-calendar"></i> 2025-08-30</span> ·
-          <span><i class="far fa-clock"></i> 8 分钟读完</span> ·
-          <span><i class="fas fa-tags"></i> DOM, 事件, 策略</span>
-        </p>
-        <img src="https://github.com/llulun/qzone-praise-automator/raw/main/docs/control-panel.png"
-             alt="自动点赞原理"
-             loading="lazy"
-             style="width:100%;border-radius:12px;border:1px solid var(--border);margin:.5rem 0">
-        <p>为什么要避开脆弱的类名？如何组合语义属性定位稳定节点？点击需要哪些原生事件序列？本文从工程角度拆解“稳态”的关键。</p>
-        <p><a class="button" href="#">阅读全文</a></p>
-      </article>
-
-      <!-- 分页 -->
-      <nav aria-label="分页" class="card" style="margin-top:16px;display:flex;justify-content:space-between;align-items:center">
-        <a class="button secondary" href="#" aria-disabled="true"><i class="fas fa-angle-left"></i> 上一页</a>
-        <span style="color:var(--muted)">第 1 页 / 共 3 页</span>
-        <a class="button" href="#"><i class="fas fa-angle-right"></i> 下一页</a>
-      </nav>
-    </section>
-
-    <!-- 侧栏 -->
-    <aside aria-label="侧栏">
-      <div class="card">
-        <h3 style="margin-top:0"><i class="fas fa-search"></i> 搜索</h3>
-        <label style="display:block">
-          <span class="sr-only">搜索文章</span>
-          <input type="search" placeholder="搜索关键词…" aria-label="搜索文章"
-                 style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border)">
-        </label>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3 style="margin-top:0"><i class="fas fa-folder-open"></i> 分类</h3>
-        <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px">
-          <li><a href="#" class="chip">原理</a></li>
-          <li><a href="#" class="chip">性能</a></li>
-          <li><a href="#" class="chip">风控</a></li>
-          <li><a href="#" class="chip">UX</a></li>
-          <li><a href="#" class="chip">日志</a></li>
-          <li><a href="#" class="chip">测试</a></li>
-        </ul>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3 style="margin-top:0"><i class="fas fa-tags"></i> 标签</h3>
-        <p style="display:flex;flex-wrap:wrap;gap:8px">
-          <a href="#" class="chip">ARIA</a>
-          <a href="#" class="chip">可视化</a>
-          <a href="#" class="chip">节流</a>
-          <a href="#" class="chip">随机化</a>
-          <a href="#" class="chip">缓存</a>
-          <a href="#" class="chip">选择器</a>
-        </p>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3 style="margin-top:0"><i class="fas fa-rss"></i> 订阅</h3>
-        <p><a href="#" class="button secondary"><i class="fas fa-rss"></i> RSS</a></p>
-        <p style="color:var(--muted)">后续可接入静态生成器导出 RSS。</p>
-      </div>
-    </aside>
+  <h2 style="margin-top:24px;"><i class="fas fa-list-ul"></i> 导航</h2>
+  <div class="card-grid">
+    <article class="card"><h3>全部文章</h3><p><a href="#">查看列表</a></p></article>
+    <article class="card"><h3>分类</h3><p><a href="#">原理 / 性能 / 风控 / UX</a></p></article>
+    <article class="card"><h3>标签</h3><p><a href="#">ARIA / 随机化 / 缓存 / 选择器</a></p></article>
+    <article class="card"><h3>订阅</h3><p><a href="#" class="button secondary"><i class="fas fa-rss"></i> RSS</a></p></article>
   </div>
 </main>
 
 <footer class="footer">
   <div class="container cols">
-    <div><h4>下载</h4><p><a href="./download.html">获取稳定版</a></p></div>
-    <div><h4>文档</h4><p><a href="./docs.html">安装与使用</a></p></div>
-    <div><h4>社区</h4><p><a href="./community.html">贡献与反馈</a></p></div>
-    <div><h4>开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
+    <div><h4><i class="fas fa-download"></i> 下载</h4><p><a href="./download.html">获取稳定版</a></p></div>
+    <div><h4><i class="fas fa-book"></i> 文档</h4><p><a href="./docs.html">安装与使用</a></p></div>
+    <div><h4><i class="fas fa-users"></i> 社区</h4><p><a href="./community.html">贡献与反馈</a></p></div>
+    <div><h4><i class="fas fa-code-branch"></i> 开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
   </div>
 </footer>
 </body>

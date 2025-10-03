@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>QZone Praise Automator</title>
   <link rel="icon" type="image/svg+xml" href="./public/favicon.svg">
   <link rel="shortcut icon" href="./public/favicon.svg">
@@ -13,10 +12,7 @@
 <header class="header">
   <div class="container nav">
     <div class="brand">
-      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-        <rect x="2" y="2" width="20" height="20" rx="6" fill="#4285f4"/>
-        <path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#4285f4"/><path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
       <span>QZone Praise Automator</span>
     </div>
     <nav class="links">
@@ -32,110 +28,40 @@
       <a href="./src/pages/about.html">关于</a>
       <a href="./src/pages/contact.html">联系</a>
     </nav>
-    <a class="cta" href="./src/pages/download.html">立即下载</a>
+    <a class="cta" href="./src/pages/download.html">获取</a>
   </div>
 </header>
 
-<main>
-  <!-- Hero 区域 -->
-  <section class="hero" style="background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('./public/og-cover.png') center/cover no-repeat;">
-    <div class="container">
-      <h1>QZone Praise Automator</h1>
-      <p>稳定 · 可控 · 开源的 QQ 空间自动点赞脚本</p>
-      <a href="./src/pages/download.html" class="button">立即下载</a>
-    </div>
-  </section>
+<main class="container section">
+  <h2><i class="fas fa-box-open"></i> 项目概览</h2>
+  <div class="card">
+    <p>稳定、可控、开源的 QQ 空间自动点赞脚本。支持滚动模拟、定时刷新、过滤策略、状态栏与日志模块。</p>
+  </div>
 
-  <!-- 功能亮点 -->
-  <section class="container section">
-    <h2><i class="fas fa-star"></i> 功能亮点</h2>
-    <div class="card-grid">
-      <article class="card"><h3><i class="fas fa-thumbs-up"></i> 自动点赞</h3><p>遍历动态列表，智能判断并触发点赞。</p></article>
-      <article class="card"><h3><i class="fas fa-arrows-alt-v"></i> 滚动模拟</h3><p>定时滚动窗口，触发懒加载获取更多动态。</p></article>
-      <article class="card"><h3><i class="fas fa-sync-alt"></i> 定时刷新</h3><p>保持页面活跃与数据一致性。</p></article>
-      <article class="card"><h3><i class="fas fa-sliders-h"></i> 控制面板</h3><p>刷新频率、延迟、滚动步长、重试次数等可配置。</p></article>
-    </div>
-  </section>
+  <h2 style="margin-top:24px;"><i class="fas fa-star"></i> 主要功能</h2>
+  <div class="card-grid">
+    <article class="card"><h3><i class="fas fa-thumbs-up"></i> 自动点赞</h3><p>遍历动态列表，判断状态与过滤条件后触发点击。</p></article>
+    <article class="card"><h3><i class="fas fa-arrows-alt-v"></i> 滚动模拟</h3><p>定时滚动窗口，触发懒加载以获取更多动态。</p></article>
+    <article class="card"><h3><i class="fas fa-sync-alt"></i> 定时刷新</h3><p>保持页面活跃与数据一致性，推荐 ≥ 180 秒。</p></article>
+    <article class="card"><h3><i class="fas fa-file-alt"></i> 日志模块</h3><p>INFO/WARN/ERROR 分级，时间戳与面板查看、清理。</p></article>
+  </div>
 
-  <!-- 博客预览 -->
-  <section class="container section">
-    <h2><i class="fas fa-newspaper"></i> 博客预览</h2>
-    <div class="card-grid">
-      <article class="card">
-        <h3><i class="fas fa-mouse-pointer" style="color:#4285f4"></i> 自动点赞原理</h3>
-        <p>选择器稳定性与事件模拟详解。</p>
-        <p><a href="./src/pages/blog.html">阅读更多</a></p>
-      </article>
-      <article class="card">
-        <h3><i class="fas fa-rocket" style="color:#34a853"></i> 性能优化实战</h3>
-        <p>批处理与缓存、可视区域优先。</p>
-        <p><a href="./src/pages/blog.html">阅读更多</a></p>
-      </article>
-      <article class="card">
-        <h3><i class="fas fa-user-shield" style="color:#ea4335"></i> 风控友好策略</h3>
-        <p>节流、随机化与分批执行，降低模式化行为。</p>
-        <p><a href="./src/pages/blog.html">阅读更多</a></p>
-      </article>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="container section" aria-labelledby="faq">
-    <h2 id="faq"><i class="fas fa-question-circle"></i> 常见问题</h2>
-    <div class="card" id="faq-accordion" role="region" aria-label="交互 FAQ">
-      <button class="button secondary" data-faq="q1" aria-expanded="false"><i class="fas fa-chevron-down"></i> 为什么没有点赞？</button>
-      <div hidden id="q1"><p>检查过滤规则、日志与控制台输出，适当提高延迟与降低滚动步长。</p></div>
-
-      <button class="button secondary" data-faq="q2" aria-expanded="false"><i class="fas fa-chevron-down"></i> 如何降低被检测风险？</button>
-      <div hidden id="q2"><p>开启随机延时，降低频率，增加 pause/resume 间隔。</p></div>
-
-      <button class="button secondary" data-faq="q3" aria-expanded="false"><i class="fas fa-chevron-down"></i> 图片与资源如何优化？</button>
-      <div hidden id="q3"><p>使用 loading="lazy" 与现代格式（WebP），减小首屏负载。</p></div>
-    </div>
-  </section>
-
-  <!-- KPI -->
-  <section class="container section">
-    <h2><i class="fas fa-chart-bar"></i> 数据与社区</h2>
-    <div class="kpi">
-      <div class="item"><div class="v">v2.7.2</div><div>当前版本</div></div>
-      <div class="item"><div class="v">Chrome / Firefox</div><div>兼容浏览器</div></div>
-      <div class="item"><div class="v">Tampermonkey</div><div>推荐扩展</div></div>
-      <div class="item"><div class="v">MIT</div><div>开源协议</div></div>
-    </div>
-    <p style="text-align:center;margin-top:16px;color:var(--muted)">欢迎在 GitHub 进行反馈与贡献。</p>
-  </section>
+  <h2 style="margin-top:24px;"><i class="fas fa-lightbulb"></i> 快速入口</h2>
+  <div class="card-grid">
+    <article class="card"><h3>下载</h3><p><a href="./src/pages/download.html">获取稳定版</a></p></article>
+    <article class="card"><h3>文档</h3><p><a href="./src/pages/docs.html">安装与使用</a></p></article>
+    <article class="card"><h3>日志</h3><p><a href="./src/pages/changelog.html">版本与路线图</a></p></article>
+    <article class="card"><h3>社区</h3><p><a href="./src/pages/community.html">贡献与反馈</a></p></article>
+  </div>
 </main>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container cols">
-    <div>
-      <h4><i class="fas fa-code-branch"></i> 开源</h4>
-      <p>MIT License · GitHub 仓库与 Issues 反馈通道</p>
-      <p>
-        <a href="https://github.com/llulun/qzone-praise-automator" rel="noopener">仓库</a> ·
-        <a href="https://github.com/llulun/qzone-praise-automator/issues" rel="noopener">反馈</a>
-      </p>
-    </div>
-    <div>
-      <h4><i class="fas fa-book"></i> 文档</h4>
-      <p><a href="./src/pages/docs.html">安装与配置</a></p>
-      <p><a href="./src/pages/changelog.html">版本日志</a></p>
-    </div>
-    <div>
-      <h4><i class="fas fa-users"></i> 社区</h4>
-      <p><a href="./src/pages/community.html">贡献指南</a></p>
-      <p><a href="./src/pages/about.html">关于我们</a></p>
-    </div>
-    <div>
-      <h4><i class="fas fa-heart"></i> 致谢</h4>
-      <p>感谢贡献者与使用者的持续支持。</p>
-    </div>
+    <div><h4><i class="fas fa-download"></i> 下载</h4><p><a href="./src/pages/download.html">获取稳定版</a></p></div>
+    <div><h4><i class="fas fa-book"></i> 文档</h4><p><a href="./src/pages/docs.html">安装与使用</a></p></div>
+    <div><h4><i class="fas fa-users"></i> 社区</h4><p><a href="./src/pages/community.html">贡献与反馈</a></p></div>
+    <div><h4><i class="fas fa-code-branch"></i> 开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
   </div>
 </footer>
-
-<!-- Scripts -->
-<script type="module" src="./src/main.js"></script>
 </body>
 </html>
