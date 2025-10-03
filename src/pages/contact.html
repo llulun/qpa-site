@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>联系 | QZone Praise Automator</title>
+  <link rel="stylesheet" href="/src/assets/design.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><img src="/favicon.svg" width="24" height="24" alt=""><span>QPA</span></div>
+    <nav class="links">
+      <a href="/">首页</a>
+      <a href="/src/pages/product.html">产品</a>
+      <a href="/src/pages/download.html">下载</a>
+      <a href="/src/pages/docs.html">文档</a>
+      <a href="/src/pages/whitepaper.html">技术白皮书</a>
+      <a href="/src/pages/changelog.html">日志</a>
+      <a href="/src/pages/community.html">社区</a>
+      <a href="/src/pages/showcase.html">案例</a>
+      <a href="/src/pages/blog.html">技术博客</a>
+      <a href="/src/pages/about.html">关于</a>
+      <a href="/src/pages/contact.html" class="active">联系</a>
+    </nav>
+    <a class="cta" href="/src/pages/download.html">立即下载</a>
+  </div>
+</header>
+
+<main class="container section">
+  <h2><i class="fas fa-envelope"></i> 联系我们</h2>
+  <div class="card">
+    <form id="contact-form" novalidate>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <label>姓名<input type="text" name="name" required aria-required="true" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border)"></label>
+        <label>邮箱<input type="email" name="email" required aria-required="true" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border)"></label>
+      </div>
+      <label style="display:block;margin-top:12px">消息<textarea name="message" required rows="5" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border)"></textarea></label>
+      <button class="button" type="submit" role="button" style="margin-top:12px"><i class="fas fa-paper-plane"></i> 发送</button>
+      <p id="form-status" role="status" style="margin-top:8px;color:var(--muted)"></p>
+    </form>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <p><i class="fab fa-github"></i> GitHub：<a href="https://github.com/llulun/qzone-praise-automator">llulun/qzone-praise-automator</a></p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container cols">
+    <div><h4>下载</h4><p><a href="/src/pages/download.html">获取稳定版</a></p></div>
+    <div><h4>文档</h4><p><a href="/src/pages/docs.html">安装与使用</a></p></div>
+    <div><h4>社区</h4><p><a href="/src/pages/community.html">贡献与反馈</a></p></div>
+    <div><h4>开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
+  </div>
+</footer>
+<script>
+document.getElementById('contact-form')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const status = document.getElementById('form-status');
+  const valid = form.checkValidity();
+  status.textContent = valid ? '已发送（示例，不做后端提交）' : '请完善必填项。';
+});
+</script>
+</body>
+</html>

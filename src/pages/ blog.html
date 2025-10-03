@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><!-- EDIT HERE -->技术博客 | QZone Praise Automator</title>
-<link rel="stylesheet" href="/src/assets/design.css" />
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>技术博客 | QZone Praise Automator</title>
+  <link rel="stylesheet" href="/src/assets/design.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
 <header class="header">
   <div class="container nav">
-    <div class="brand"><img src="/favicon.svg" width="24" height="24" alt=""><span>QZone Praise Automator</span></div>
+    <div class="brand"><img src="/favicon.svg" width="24" height="24" alt=""><span>QPA</span></div>
     <nav class="links">
       <a href="/">首页</a>
       <a href="/src/pages/product.html">产品</a>
@@ -18,25 +19,42 @@
       <a href="/src/pages/changelog.html">日志</a>
       <a href="/src/pages/community.html">社区</a>
       <a href="/src/pages/showcase.html">案例</a>
-      <a href="/src/pages/blog.html" class="active">技术博客</a> <!-- ADD active -->
+      <a href="/src/pages/blog.html" class="active">技术博客</a>
+      <a href="/src/pages/about.html">关于</a>
+      <a href="/src/pages/contact.html">联系</a>
     </nav>
     <a class="cta" href="/src/pages/download.html">获取</a>
   </div>
 </header>
 
 <main class="container section">
-  <h2>原理解析：如何实现自动点赞</h2>
+  <h2><i class="fas fa-mouse-pointer"></i> 自动点赞原理</h2>
   <div class="card">
-    <p><strong>元素选择：</strong>基于稳定选择器定位点赞按钮。</p>
-    <p><strong>点击事件：</strong>使用原生事件序列，兼容与安全。</p>
-    <p><strong>状态判断：</strong>读取按钮状态后再行动。</p>
+    <p>选择器稳定性与事件模拟详解，点击序列与状态判断策略。</p>
   </div>
 
-  <h2 style="margin-top:24px;">性能优化：减少 DOM 查询开销</h2>
+  <h2 style="margin-top:24px;"><i class="fas fa-rocket"></i> 性能优化</h2>
   <div class="card">
-    <p><strong>批处理：</strong>滚动后统一查询与计算。</p>
-    <p><strong>缓存：</strong>缓存已处理节点。</p>
-    <p><strong>可见性：</strong>优先可视区域。</p>
+    <p>批处理与缓存、可视区域优先，显著降低查询开销。</p>
+  </div>
+
+  <h2 style="margin-top:24px;"><i class="fas fa-user-shield"></i> 风控策略</h2>
+  <div class="card">
+    <p>节流、随机化与分批执行，降低模式化行为。</p>
+  </div>
+
+  <h2 style="margin-top:24px;"><i class="fas fa-list-ul"></i> 最新文章</h2>
+  <div class="card-grid">
+    <article class="card">
+      <h3>状态栏 UX 细节</h3>
+      <p>颜色、进度、对比度与 ARIA 标签，提升可读与无障碍。</p>
+      <img src="/public/og-cover.png" alt="封面" loading="lazy" style="width:100%;border-radius:12px;border:1px solid var(--border)">
+    </article>
+    <article class="card">
+      <h3>日志模块最佳实践</h3>
+      <p>INFO/WARN/ERROR 分级、时间戳与面板查看策略。</p>
+      <img src="/public/og-cover.png" alt="封面" loading="lazy" style="width:100%;border-radius:12px;border:1px solid var(--border)">
+    </article>
   </div>
 </main>
 
