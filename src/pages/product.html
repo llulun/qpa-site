@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>产品 | QZone Praise Automator</title>
+<link rel="stylesheet" href="/src/assets/design.css" />
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><img src="/favicon.svg" width="24" height="24" alt=""><span>QPA 产品</span></div>
+    <nav class="links">
+      <a href="/">首页</a>
+      <a href="/src/pages/download.html">下载</a>
+      <a href="/src/pages/docs.html">文档</a>
+      <a href="/src/pages/whitepaper.html">技术白皮书</a>
+      <a href="/src/pages/changelog.html">日志</a>
+      <a href="/src/pages/community.html">社区</a>
+    </nav>
+    <a class="cta" href="/src/pages/download.html">获取</a>
+  </div>
+</header>
+
+<main class="container section">
+  <h2>产品概览</h2>
+  <p>QPA 致力于为 QQ 空间用户提供“稳态自动点赞”的体验：通过自动检测与滚动模拟确保覆盖，通过可配置刷新与延时策略保持安全，通过状态栏与日志模块实现可视化与可追踪。</p>
+
+  <h2 style="margin-top:24px;">详细功能说明</h2>
+  <div class="card-grid">
+    <article class="card">
+      <h3>自动点赞</h3>
+      <p><strong>逻辑：</strong>遍历动态列表，判断点赞状态与过滤条件后触发点击事件。</p>
+      <p><strong>过滤：</strong>支持屏蔽指定用户、过滤广告/游戏转发，避免干扰。</p>
+      <p><strong>场景：</strong>日常点赞与批量覆盖，提升效率。</p>
+    </article>
+    <article class="card">
+      <h3>滚动模拟</h3>
+      <p><strong>原理：</strong>定时滚动窗口，触发懒加载获取更多动态。</p>
+      <p><strong>参数：</strong>步长与间隔可调，适配不同页面结构。</p>
+      <p><strong>场景：</strong>长列表与弱网环境下减少遗漏。</p>
+    </article>
+    <article class="card">
+      <h3>定时刷新</h3>
+      <p><strong>策略：</strong>保持页面活跃与数据一致性，避免长时间停留导致数据失真。</p>
+      <p><strong>推荐：</strong>刷新 ≥ 180 秒，点赞延迟 ≥ 3–5 秒。</p>
+      <p><strong>场景：</strong>长时间运行与无人值守场景。</p>
+    </article>
+    <article class="card">
+      <h3>控制面板</h3>
+      <p><strong>参数：</strong>刷新频率、延迟、滚动步长、重试次数、主题、透明度与色彩。</p>
+      <p><strong>操作：</strong>暂停/恢复、测试执行、查看日志与重置配置。</p>
+      <p><strong>可用性：</strong>键盘可达、ARIA 标签与错误提示。</p>
+    </article>
+    <article class="card">
+      <h3>状态栏</h3>
+      <p><strong>信息：</strong>当前任务、剩余时间、执行速率、进度条与提示图标。</p>
+      <p><strong>展示：</strong>顶部固定，支持暗黑主题与颜色自定义。</p>
+      <p><strong>场景：</strong>实时监控与可视反馈。</p>
+    </article>
+    <article class="card">
+      <h3>日志模块</h3>
+      <p><strong>等级：</strong>INFO/WARN/ERROR，带时间戳。</p>
+      <p><strong>视图：</strong>面板内查看（最多 500 条），支持清理与持久化。</p>
+      <p><strong>用途：</strong>定位异常与优化策略。</p>
+    </article>
+  </div>
+
+  <h2 style="margin-top:24px;">界面预览</h2>
+  <p>下方为示意图位：建议替换为真实截图。</p>
+  <img src="https://raw.githubusercontent.com/llulun/qzone-praise-automator/main/docs/control-panel.png" alt="控制面板预览" style="width:100%;border-radius:8px;border:1px solid var(--border)">
+</main>
+
+<footer class="footer">
+  <div class="container cols">
+    <div><h4>获取</h4><p><a href="/src/pages/download.html">下载</a> · <a href="/src/pages/docs.html">文档</a></p></div>
+    <div><h4>开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
+    <div><h4>社区</h4><p><a href="/src/pages/community.html">贡献指南</a></p></div>
+    <div><h4>路线图</h4><p><a href="/src/pages/changelog.html">版本与计划</a></p></div>
+  </div>
+</footer>
+</body>
+</html>

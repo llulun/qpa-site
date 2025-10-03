@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>技术白皮书 | QZone Praise Automator</title>
+<link rel="stylesheet" href="/src/assets/design.css" />
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><img src="/favicon.svg" width="24" height="24" alt=""><span>QPA 技术白皮书</span></div>
+    <nav class="links">
+      <a href="/">首页</a>
+      <a href="/src/pages/product.html">产品</a>
+      <a href="/src/pages/download.html">下载</a>
+      <a href="/src/pages/docs.html">文档</a>
+      <a href="/src/pages/changelog.html">日志</a>
+      <a href="/src/pages/community.html">社区</a>
+    </nav>
+    <a class="cta" href="/src/pages/download.html">获取</a>
+  </div>
+</header>
+
+<main class="container section">
+  <h2>概述</h2>
+  <p>本白皮书详细阐述 QPA 的架构设计、DOM 交互策略、调度与节流机制、反检测策略、日志与可视化体系、性能优化、测试方法与未来路线。目标是提供工程级透明度，便于二次开发与安全运行。</p>
+
+  <h2 style="margin-top:24px;">架构设计</h2>
+  <div class="card">
+    <p><strong>模块划分：</strong>Detection(检测) · Action(执行) · Scheduler(调度) · UI(控制面板/状态栏) · Logger(日志) · Config(配置) · Guard(安全策略)。</p>
+    <p><strong>数据流：</strong>检测产出待处理列表 → 调度分配执行节奏 → 执行模块触发点击与滚动 → UI 显示状态 → Logger 记录事件 → Config 影响各环节策略。</p>
+    <p><strong>可插拔：</strong>各模块尽量解耦，参数化配置支持策略替换与扩展。</p>
+  </div>
+
+  <h2 style="margin-top:24px;">DOM 交互与事件模拟</h2>
+  <div class="card">
+    <p><strong>选择器稳定性：</strong>优先选择不随样式与布局变动的节点路径，避免过度依赖 class 名称。</p>
+    <p><strong>点击事件：</strong>使用原生事件（MouseEvent/PointerEvent）触发，保持与人类交互相似的序列。</p>
+    <p><strong>状态读取：</strong>通过按钮状态与文本/属性判断是否已点赞，避免重复。</p>
+  </div>
+
+  <h2 style="margin-top:24px;">调度、节流与随机化</h2>
+  <div class="card">
+    <p><strong>时间轮：</strong>基于 refreshInterval 的轮询与滚动触发；在每个周期内限制 maxLikesPerCycle。</p>
+    <p><strong>节流：</strong>对点赞与滚动操作设置最小间隔 likeDelay / scrollInterval，避免高频触发。</p>
+    <p><strong>随机化：</strong>在延时与步长中加入微扰（±10–20%），降低模式化，提升安全性。</p>
+  </div>
+
+  <h2 style="margin-top:24px;">反检测与风险控制</h2>
+  <div class="card">
+    <p><strong>速率控制：</strong>避免在短时间内触发大量点赞；分批次完成。</p>
+    <p><strong>行为多样性：</strong>滚动、暂停、延时与重试穿插，形成更自然的行为序列。</p>
+    <p><strong>过滤与白名单：</strong>使用 filterKeywords 与 userBlockList 减少异常源与争议内容。</p>
+    <p><strong>透明度：</strong>状态栏与日志让行为可见，便于及时调整与止损。</p>
+  </div>
+
+  <h2 style="margin-top:24px;">日志与可视化体系</h2>
+  <div class="card">
+    <p><strong>等级：</strong>INFO/WARN/ERROR；以重要度区分事件。</p>
+    <p><strong>内容：</strong>时间戳、事件名、参数摘要、结果状态；必要时包含 DOM 片段标识。</p>
+    <p><strong>面板与持久化：</strong>面板列表展示（上限 logMaxEntries），支持清理与导出。</p>
+  </div>
+
+  <h2 style="margin-top:24px;">性能优化</h2>
+  <div class="card">
+    <p><strong>批处理：</strong>滚动后统一查询需要处理的节点，减少频繁 DOM 访问。</p>
+    <p><strong>缓存：</strong>缓存已处理节点的标识，避免重复计算与点击。</p>
+    <p><strong>可见性优先：</strong>优先处理可视区域，提高有效率。</p>
+  </div>
+
+  <h2 style="margin-top:24px;">测试与质量保证</h2>
+  <div class="card">
+    <p><strong>跨浏览器：</strong>在 Chrome/Firefox 上进行安装、运行与日志验证。</p>
+    <p><strong>场景用例：</strong>弱网、长列表、过滤规则极端值、延时与步长边界条件。</p>
+    <p><strong>回归检查：</strong>新版本发布前复测核心流程：检测 → 调度 → 点赞 → 日志。</p>
+  </div>
+
+  <h2 style="margin-top:24px;">未来路线图</h2>
+  <div class="card">
+    <ul>
+      <li><strong>v2.8：</strong>更细粒度过滤规则与预设。</li>
+      <li><strong>v2.9：</strong>策略插件化，支持个性化策略包。</li>
+      <li><strong>v3.0：</strong>UI 重构、国际化（en-US）、更智能的行为模拟。</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container cols">
+    <div><h4>下载</h4><p><a href="/src/pages/download.html">获取稳定版</a></p></div>
+    <div><h4>文档</h4><p><a href="/src/pages/docs.html">安装与使用</a></p></div>
+    <div><h4>社区</h4><p><a href="/src/pages/community.html">贡献与反馈</a></p></div>
+    <div><h4>开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
+  </div>
+</footer>
+</body>
+</html>
