@@ -1,16 +1,18 @@
 :root {
-  /* Colors */
-  --brand: #6B4CFF;
-  --brand-2: #00D4FF;
-  --accent: #FF66CC;
-  --bg: #0B0B12;
-  --card: #12121A;
-  --border: #252534;
-  --text: #E8E8F2;
-  --muted: #B6B6C7;
+  /* ===== Brand colors (EDIT HERE if you want tweak brand palette) ===== */
+  --brand: #6B4CFF;   /* EDIT HERE: 主色（科技紫） */
+  --brand-2: #00D4FF; /* EDIT HERE: 辅色（清新蓝） */
+  --accent: #FF66CC;  /* EDIT HERE: 点缀（活力粉） */
+
+  /* ===== Light glass theme (already switched to light) ===== */
+  --bg: #f7f8fb;               /* EDIT HERE: 浅色背景 */
+  --card: rgba(255,255,255,0.72);
+  --border: rgba(34, 40, 49, 0.12);
+  --text: #222;                /* EDIT HERE: 正文颜色（深灰） */
+  --muted: #555;               /* EDIT HERE: 次要文本（灰） */
 
   /* Layout */
-  --radius: 8px;
+  --radius: 12px;
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;
@@ -19,70 +21,97 @@
   --maxw: 1120px;
 
   /* Effects */
-  --shadow-1: 0 8px 24px rgba(0,0,0,.35);
-  --shadow-2: 0 16px 40px rgba(0,0,0,.45);
+  --shadow-1: 0 10px 30px rgba(34, 40, 49, .10);
+  --shadow-2: 0 20px 60px rgba(34, 40, 49, .14);
 
   /* Font */
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
+/* ===== NO CHANGE ABOVE: Base reset ===== */
 * { box-sizing: border-box; }
 html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); }
+
+/* Links */
 a { color: var(--brand); text-decoration: none; }
 a:hover { color: var(--brand-2); }
 
+/* Layout */
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space-4); }
+
+/* Header: unified glass style */
 .header {
-  position: sticky; top: 0; z-index: 50; backdrop-filter: blur(6px);
-  background: rgba(11,11,18,.6); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px) saturate(160%);
+  background: rgba(255,255,255,0.68);
+  border-bottom: 1px solid var(--border);
 }
 .header .nav { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) 0; }
-.header .brand { display: flex; align-items: center; gap: var(--space-2); font-weight: 600; }
+.header .brand { display: flex; align-items: center; gap: var(--space-2); font-weight: 700; }
 .header .links { margin-left: auto; display: flex; gap: var(--space-3); }
+.header .links a { padding: 10px 8px; border-radius: 8px; }
+.header .links a:hover { background: rgba(0,0,0,0.04); }
+.header .links a.active { color: var(--brand); font-weight: 700; border-bottom: 2px solid var(--brand); }
 .header .cta { background: var(--brand); color: #fff; padding: 8px 14px; border-radius: var(--radius); box-shadow: var(--shadow-1); }
-.header .cta:hover { background: var(--brand-2); }
+.header .cta:hover { background: #5D3BF8; }
 
+/* Hero */
 .hero { padding: 80px 0 40px; text-align: center; }
 .hero h1 { font-size: 44px; line-height: 1.15; margin: 0 0 var(--space-3); }
 .hero p { font-size: 18px; color: var(--muted); margin: 0 auto var(--space-4); max-width: 720px; }
 .hero .actions { display: flex; justify-content: center; gap: var(--space-3); flex-wrap: wrap; }
 
+/* Buttons */
 .button {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--brand); color: #fff; padding: 12px 18px; border-radius: var(--radius);
   box-shadow: var(--shadow-1); transition: transform .18s ease, background .18s ease;
 }
-.button.secondary { background: #1B1B26; color: var(--text); border: 1px solid var(--border); }
+.button.secondary { background: rgba(255,255,255,0.8); color: var(--text); border: 1px solid var(--border); }
 .button:hover { transform: translateY(-1px); background: #5D3BF8; }
 
+/* Sections */
 .section { padding: 48px 0; }
+
+/* Glass banner */
 .banner {
-  background: linear-gradient(90deg, rgba(107,76,255,.15), rgba(0,212,255,.15));
+  background: linear-gradient(90deg, rgba(107,76,255,.14), rgba(0,212,255,.14));
   border: 1px solid var(--border); border-radius: var(--radius);
   padding: var(--space-3); display: flex; align-items: center; gap: var(--space-3);
 }
 
+/* Cards grid */
 .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
 .card {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--card); backdrop-filter: blur(12px);
+  border: 1px solid var(--border); border-radius: var(--radius);
   padding: var(--space-4); box-shadow: var(--shadow-1);
 }
 .card h3 { margin: 0 0 var(--space-2); font-size: 18px; }
 .card p { margin: 0; color: var(--muted); }
 
+/* KPI */
 .kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
-.kpi .item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); text-align: center; }
+.kpi .item {
+  background: var(--card); backdrop-filter: blur(10px);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); text-align: center;
+}
 .kpi .item .v { font-size: 24px; font-weight: 700; }
 
-.footer { border-top: 1px solid var(--border); padding: 40px 0; color: var(--muted); }
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border); padding: 40px 0; color: var(--muted);
+  background: rgba(255,255,255,0.6); backdrop-filter: blur(8px);
+}
 .footer .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
 .footer h4 { margin: 0 0 var(--space-2); color: var(--text); }
 
+/* Responsive */
 @media (max-width: 960px) {
   .card-grid { grid-template-columns: 1fr 1fr; }
   .kpi { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }
-  .header .links { display: none; }
+  .header .links { display: none; } /* 移动端隐藏顶栏链接，仅保留 CTA */
 }
