@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>文档 | QZone Praise Automator</title>
+  <title>产品 | QZone Praise Automator</title>
   <link rel="icon" type="image/svg+xml" href="../../public/favicon.svg">
   <link rel="shortcut icon" href="../../public/favicon.svg">
   <link rel="stylesheet" href="../assets/design.css">
@@ -12,17 +12,14 @@
 <header class="header">
   <div class="container nav">
     <div class="brand">
-      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-        <rect x="2" y="2" width="20" height="20" rx="6" fill="#4285f4"/>
-        <path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#4285f4"/><path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
       <span>QZone Praise Automator</span>
     </div>
     <nav class="links">
       <a href="/">首页</a>
-      <a href="./product.html">产品</a>
+      <a href="./product.html" class="active">产品</a>
       <a href="./download.html">下载</a>
-      <a href="./docs.html" class="active">文档</a>
+      <a href="./docs.html">文档</a>
       <a href="./whitepaper.html">技术白皮书</a>
       <a href="./changelog.html">日志</a>
       <a href="./community.html">社区</a>
@@ -31,80 +28,32 @@
       <a href="./about.html">关于</a>
       <a href="./contact.html">联系</a>
     </nav>
-    <a class="cta" href="./download.html">获取</a>
+    <a class="cta" href="./download.html">立即下载</a>
   </div>
 </header>
 
 <main class="container section">
-  <h2><i class="fas fa-book-open"></i> 安装指南</h2>
-  <ol>
-    <li><strong>安装扩展：</strong>Tampermonkey（推荐）或 Violentmonkey。</li>
-    <li><strong>获取脚本：</strong>从官方仓库/Release 下载 QPA.js。</li>
-    <li><strong>导入：</strong>扩展 Dashboard “导入文件”或创建新脚本粘贴内容。</li>
-    <li><strong>域名匹配：</strong>*://*.qzone.qq.com/*。</li>
-  </ol>
+  <h2><i class="fas fa-box-open"></i> 产品概览</h2>
+  <p>QPA 提供稳态自动点赞体验：自动检测与滚动模拟确保覆盖，可配置刷新与延时保持安全，状态栏与日志实现可视与可追踪。</p>
 
-  <h2 style="margin-top:24px;"><i class="fas fa-play-circle"></i> 使用指南</h2>
-  <ul>
-    <li><strong>AL Menu：</strong>页面右上角浮动菜单，进入控制面板。</li>
-    <li><strong>状态栏：</strong>查看任务进度、剩余时间与提示信息。</li>
-    <li><strong>日志：</strong>面板查看、清除与导出。</li>
-    <li><strong>操作：</strong>暂停/恢复与测试执行。</li>
-  </ul>
-
-  <h2 style="margin-top:24px;"><i class="fas fa-sliders-h"></i> 配置参数字典</h2>
-  <table style="width:100%;border-collapse:collapse">
-    <thead>
-      <tr>
-        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">字段</th>
-        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">类型</th>
-        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">默认值</th>
-        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">推荐值</th>
-        <th style="text-align:left;border-bottom:1px solid var(--border);padding:8px">说明</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="padding:8px">refreshInterval</td><td style="padding:8px">Number</td><td style="padding:8px">180</td><td style="padding:8px">180–300</td><td style="padding:8px">刷新频率（秒）</td></tr>
-      <tr><td style="padding:8px">likeDelay</td><td style="padding:8px">Number</td><td style="padding:8px">5</td><td style="padding:8px">3–7</td><td style="padding:8px">点赞延迟（秒）</td></tr>
-      <tr><td style="padding:8px">scrollStep</td><td style="padding:8px">Number</td><td style="padding:8px">480</td><td style="padding:8px">360–600</td><td style="padding:8px">滚动步长（像素）</td></tr>
-    </tbody>
-  </table>
-
-  <h2 style="margin-top:24px;"><i class="fas fa-code"></i> 示例代码</h2>
-  <div class="card">
-    <pre style="white-space:pre-wrap;word-wrap:break-word;"><code>// 调整延时与滚动策略
-config.likeDelay = 5;
-config.scrollStep = 480;
-config.randomizeDelay = true;
-
-// 启用日志
-logger.setLevel('INFO');
-logger.maxEntries = 500;
-
-// 暂停与恢复
-scheduler.pause();
-setTimeout(() => scheduler.resume(), 30000);
-</code></pre>
-  </div>
-
-  <h2 style="margin-top:24px;"><i class="fas fa-question-circle"></i> 交互式 FAQ</h2>
-  <div class="card" id="faq-accordion" role="region" aria-label="交互 FAQ">
-    <button class="button secondary" data-faq="q1" aria-expanded="false"><i class="fas fa-chevron-down"></i> 如何与 Auto Login Helper 搭配？</button>
-    <div hidden id="q1"><p>先登录后自动启动 QPA，提高一键化体验。</p></div>
-
-    <button class="button secondary" data-faq="q2" aria-expanded="false"><i class="fas fa-chevron-down"></i> 弱网环境如何优化？</button>
-    <div hidden id="q2"><p>提高 likeDelay 与 scrollInterval，减少失败与重试。</p></div>
+  <h2 style="margin-top:24px;"><i class="fas fa-cogs"></i> 功能详情</h2>
+  <div class="card-grid">
+    <article class="card"><h3><i class="fas fa-thumbs-up"></i> 自动点赞</h3><p>遍历动态列表，判断点赞状态与过滤条件后触发点击事件。</p></article>
+    <article class="card"><h3><i class="fas fa-arrows-alt-v"></i> 滚动模拟</h3><p>定时滚动窗口，触发懒加载获取更多动态。</p></article>
+    <article class="card"><h3><i class="fas fa-sync-alt"></i> 定时刷新</h3><p>保持页面活跃与数据一致性，推荐 ≥ 180 秒。</p></article>
+    <article class="card"><h3><i class="fas fa-sliders-h"></i> 控制面板</h3><p>刷新频率、延迟、滚动步长、重试次数、主题、透明度与色彩。</p></article>
+    <article class="card"><h3><i class="fas fa-tasks"></i> 状态栏</h3><p>当前任务、剩余时间、进度条与提示图标。</p></article>
+    <article class="card"><h3><i class="fas fa-file-alt"></i> 日志模块</h3><p>INFO/WARN/ERROR 等级、时间戳与面板查看、清理与持久化。</p></article>
   </div>
 </main>
 
 <footer class="footer">
   <div class="container cols">
-    <div><h4><i class="fas fa-download"></i> 下载</h4><p><a href="./download.html">获取稳定版</a></p></div>
-    <div><h4><i class="fas fa-history"></i> 日志</h4><p><a href="./changelog.html">查看版本历史</a></p></div>
-    <div><h4><i class="fas fa-users"></i> 社区</h4><p><a href="./community.html">贡献与反馈</a></p></div>
-    <div><h4><i class="fas fa-code-branch"></i> 开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
+    <div><h4>获取</h4><p><a href="./download.html">下载</a> · <a href="./docs.html">文档</a></p></div>
+    <div><h4>开源</h4><p><a href="https://github.com/llulun/qzone-praise-automator">GitHub 仓库</a></p></div>
+    <div><h4>社区</h4><p><a href="./community.html">贡献指南</a></p></div>
+    <div><h4>路线图</h4><p><a href="./changelog.html">版本与计划</a></p></div>
   </div>
 </footer>
-<script type="module" src="../main.js"></script>
 </body>
 </html>
