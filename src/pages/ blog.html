@@ -2,20 +2,23 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>技术博客 | QZone Praise Automator</title>
+<title><!-- EDIT HERE -->技术博客 | QZone Praise Automator</title>
 <link rel="stylesheet" href="/src/assets/design.css" />
 </head>
 <body>
 <header class="header">
   <div class="container nav">
-    <div class="brand"><img src="/favicon.svg" width="24" height="24" alt=""><span>QPA 技术博客</span></div>
+    <div class="brand"><img src="/favicon.svg" width="24" height="24" alt=""><span>QZone Praise Automator</span></div>
     <nav class="links">
       <a href="/">首页</a>
       <a href="/src/pages/product.html">产品</a>
       <a href="/src/pages/download.html">下载</a>
       <a href="/src/pages/docs.html">文档</a>
+      <a href="/src/pages/whitepaper.html">技术白皮书</a>
       <a href="/src/pages/changelog.html">日志</a>
       <a href="/src/pages/community.html">社区</a>
+      <a href="/src/pages/showcase.html">案例</a>
+      <a href="/src/pages/blog.html" class="active">技术博客</a> <!-- ADD active -->
     </nav>
     <a class="cta" href="/src/pages/download.html">获取</a>
   </div>
@@ -24,30 +27,16 @@
 <main class="container section">
   <h2>原理解析：如何实现自动点赞</h2>
   <div class="card">
-    <p><strong>元素选择：</strong>基于稳定的选择器定位点赞按钮，避免依赖易变结构。</p>
-    <p><strong>点击事件：</strong>触发原生事件而非直接调用内部函数，提升兼容与安全性。</p>
-    <p><strong>状态判断：</strong>读取按钮状态或样式，确认未点赞后再行动。</p>
+    <p><strong>元素选择：</strong>基于稳定选择器定位点赞按钮。</p>
+    <p><strong>点击事件：</strong>使用原生事件序列，兼容与安全。</p>
+    <p><strong>状态判断：</strong>读取按钮状态后再行动。</p>
   </div>
 
   <h2 style="margin-top:24px;">性能优化：减少 DOM 查询开销</h2>
   <div class="card">
-    <p><strong>批处理：</strong>在滚动后统一查询与计算，减少频繁的 DOM 访问。</p>
-    <p><strong>缓存：</strong>缓存已处理节点，避免重复计算。</p>
-    <p><strong>可见性：</strong>仅对可视区域进行优先处理，提高响应效率。</p>
-  </div>
-
-  <h2 style="margin-top:24px;">安全策略：如何模拟人类行为</h2>
-  <div class="card">
-    <p><strong>随机化：</strong>引入延时与步长的随机扰动，降低模式化。</p>
-    <p><strong>限速：</strong>控制频率与重试上限，避免高频触发。</p>
-    <p><strong>多源判断：</strong>结合状态栏与日志监控结果动态调整策略。</p>
-  </div>
-
-  <h2 style="margin-top:24px;">前端美化技巧：让 UI 更易用</h2>
-  <div class="card">
-    <p><strong>对比度：</strong>确保关键文本与控件在暗黑主题下清晰可读。</p>
-    <p><strong>反馈：</strong>交互提供反馈（状态提示、进度与错误信息）。</p>
-    <p><strong>可访问性：</strong>键盘导航与 ARIA 标签，面向更多用户群体。</p>
+    <p><strong>批处理：</strong>滚动后统一查询与计算。</p>
+    <p><strong>缓存：</strong>缓存已处理节点。</p>
+    <p><strong>可见性：</strong>优先可视区域。</p>
   </div>
 </main>
 
